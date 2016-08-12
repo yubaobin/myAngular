@@ -1,6 +1,7 @@
 <div>
-<div>{{name}}</div>
+<button ng-click="add()">添加</button><span>{{num}}</span>
 <ul>
+	<li>{{name}}</li>
     <li ng-repeat="item in persons track by $index">
         <span>{{item.name}}</span>
         |<span>{{item.age}}</span>

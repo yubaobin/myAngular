@@ -1,5 +1,6 @@
 var app = angular.module('myApp',[]);
 app.controller("myCtrl",function($scope){
+	$scope.num = 0;
 	$scope.ybb="ybb";
 	$scope.data = [
 		{
@@ -15,22 +16,24 @@ app.controller("myCtrl",function($scope){
 			name : 'test4',
 			age : '14'
 		}
-	]
+	];
+	$scope.addNum = function(){
+		$scope.num++;
+	}
 })
 app.directive("ybb",function(){
 	return {
 		restrict: 'E',
 		scope:{
 			name:"@",
-			persons:"@"
+			persons:"=",
+			num:"=",
+			add:"&"
 		},
 		templateUrl:'./template/template.html',
 		replace: true,
 		link:function(scope,elem,attrs,ctrl){
-			console.log(scope);
-			console.log(elem);
-			console.log(attrs);
-			console.log(ctrl);
+			console.log(elem)
 		}
 	}
 })
