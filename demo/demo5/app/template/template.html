@@ -1,10 +1,16 @@
 <div>
-<button ng-click="add()">添加</button><span>{{num}}</span>
-<ul>
-	<li>{{name}}</li>
-    <li ng-repeat="item in persons track by $index">
-        <span>{{item.name}}</span>
-        |<span>{{item.age}}</span>
-    </li>
-</ul>
+<button ng-click="add()" type="button" class="btn btn-primary">点击</button>
+<div>2次点击最短时间差:{{time}}ms</div>
+<div>{{name}}点击了<span>{{num}}</span>次</div>
+<table class="table table-hover table-bordered">
+	<thead>
+		<tr><th>下标</th><th>姓名</th><th>年龄</th></tr>
+	</thead>
+	<tbody class="">
+	    <tr ng-repeat="item in persons track by $index" ng-class="{success:$odd,warning:$even}">
+	        <td>{{$index + 1}}</td><td>{{item.name}}</td><td>{{item.age}}</td>
+	    </tr>
+    </tbody>
+</table>
+<input ng-model="name" type="text" />
 </div>

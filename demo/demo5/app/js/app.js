@@ -17,9 +17,40 @@ app.controller("myCtrl",function($scope){
 			age : '14'
 		}
 	];
+
+	$scope.myColor = 1;
+	$scope.colors = [
+		{
+			code : 1,
+			name : "红色"
+		},{
+			code : 2,
+			name : "蓝色"
+		},{
+			code : 3,
+			name : "绿色"
+		},{
+			code : 4,
+			name : "黄色"
+		}
+	]
+	$scope.time = 0;
 	$scope.addNum = function(){
 		$scope.num++;
+		if($scope.num == 1){
+			$scope.time1 = new Date();
+		}else {
+			$scope.time2 = new Date();
+			var change = $scope.time2 - $scope.time1;
+			if($scope.num == 2){
+				$scope.time = change;
+			}else if(change < $scope.time){
+				$scope.time = change;
+			}
+		}
+		$scope.time1 = new Date();
 	}
+	$scope.isFullStack = true;
 })
 app.directive("ybb",function(){
 	return {
@@ -28,7 +59,8 @@ app.directive("ybb",function(){
 			name:"@",
 			persons:"=",
 			num:"=",
-			add:"&"
+			add:"&",
+			time:"@"
 		},
 		templateUrl:'./template/template.html',
 		replace: true,

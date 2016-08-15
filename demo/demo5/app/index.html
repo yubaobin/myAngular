@@ -3,10 +3,37 @@
 <head>
 	<title>指令</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="./css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 </head>
 <body ng-app="myApp">
 <div ng-controller="myCtrl">
-<ybb name={{ybb}} persons=data num=num add=addNum()></ybb>
+<p>自定义标签</p>
+<ybb name={{ybb}} time={{time}} persons="data" num="num" add=addNum()></ybb>
+
+<p>ng-change</p>
+<input type="text" ng-model="calc.arg"  ng-change="calc.result = calc.arg*2" /> X 2 =
+<code>{{ calc.result }}</code>
+
+<p>ng-if</p>
+<div>
+	<input ng-model="show" />
+	<div ng-if="show%2 == 0">什么情况</div>
+</div>
+
+<select ng-model="myColor" ng-options="x.code as x.name for x in colors">
+   <option value="">-- 请选择 --</option>
+</select>
+
+<div ng-switch="myColor">
+    <p>你选择的是:</p>
+    <p ng-switch-default>没有选择</p>
+    <p ng-switch-when=1>红色</p>
+    <p ng-switch-when=2>蓝色</p>
+    <p ng-switch-when=3>绿色</p>
+    <p ng-switch-when=4>黄色</p>
+</div>
+
 </div>
 </body>
 <script type="text/javascript" src="./js/angular.min.js"></script>
