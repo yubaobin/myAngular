@@ -1,1 +1,13 @@
-# myAngular
+myAngular
+======
+demo1
+------
+别人的demo
+
+demo2
+------
+自定义指令
+
+demo3
+------
+自定义指令2 +　$watch
