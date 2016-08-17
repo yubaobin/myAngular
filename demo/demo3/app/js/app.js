@@ -23,33 +23,24 @@ app.directive('pulldown',function(){
 		scope: {
 			datalist:"=",
 		},
-		controller: function($scope,$timeout){
+		controller: function($scope){
 			$scope.isFocus = false;
-			$scope.focus = function(){
-				$scope.isFocus = true;
-			}
-			$scope.blur = function(){
-				$timeout(function () {
-			     	$scope.isFocus = false;
-			  	}, 200);				
-			}
-			this.setText = function(text){
-				$scope.search = text;
-			}
 		},
 		link: function(scope,elem,attrs,ctrl){
 			
 		}
 	}
-}).directive('myli',function(){
+}).directive('pulldowninput',function(){
 	return {
-		restrict : "A",
 		require: "^pulldown",
 		scope: true,
 		link: function(scope,elem,attrs,ctrl){
-			elem.bind('click',function(e){
-				ctrl.setText(elem[0].innerText);
-			})
+			elem.bind('focus',function(e){
+				scope.isFocus = true;
+			});
+			elem.bind('blur',function(e){
+				scope.isFocus = false;
+			});
 		}
 	}
 })

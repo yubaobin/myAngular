@@ -1,4 +1,4 @@
-<input type="text" ng-model="search" ng-focus="focus()" ng-blur = "blur()" />
-<ul ng-show="isFocus" class="data-list" >
-    <li ng-repeat="item in datalist | filter:search | orderBy: item" myli>{{item}}</li>
+<input type="text" ng-model="search" pulldowninput />
+<ul ng-show="isFocus">
+    <li ng-repeat="item in datalist | filter:search | orderBy: item">{{item}}</li>
 </ul>
