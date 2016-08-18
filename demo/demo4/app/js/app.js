@@ -1,4 +1,4 @@
-var app = angular.module('myApp',['ui.router']);
+var app = angular.module('myApp',['ui.router','ngAnimate']);
 app.controller("myCtrl",function($scope){
 	$scope.countries = ['Luxembourg','Saudi','Afghanistan','Bangladesh','Brunei','Cambodia','Indonesia','Jordan']
 }).config(function($stateProvider, $urlRouterProvider) {
@@ -42,6 +42,10 @@ app.controller("myCtrl",function($scope){
       url:"/detail/:id",
       templateUrl:"./page/detail.html",
       controller:"detail"
+    }).state("animate",{
+      url:"/animate",
+      templateUrl:"./page/animate.html",
+      controller:"animate"
     })
 }).controller("mainCtrl",function($scope,$state){
   $scope.goto3 = function(){
@@ -64,4 +68,6 @@ app.controller("myCtrl",function($scope){
   }else if(id == 4){
     $scope.content = "你点击了第四个的详情";
   }
+}).controller('animate',function($scope){
+  
 })
