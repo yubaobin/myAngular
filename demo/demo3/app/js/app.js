@@ -9,7 +9,7 @@ app.controller("myCtrl",function($scope){
 
 	$scope.say = function(){
 		console.log($scope.name);
-		watch();
+		watch(); //解除监听
 	}
 
 	$scope.countries = ['Luxembourg','Saudi','Afghanistan','Bangladesh','Brunei','Cambodia','Indonesia','Jordan']
@@ -19,7 +19,7 @@ app.directive('pulldown',function(){
 	return {
 		restrict : "A",
 		templateUrl: "./template/template.html",
-		replace: false,
+		replace: true,
 		scope: {
 			datalist:"=",
 		},
@@ -50,6 +50,17 @@ app.directive('pulldown',function(){
 			elem.bind('click',function(e){
 				ctrl.setText(elem[0].innerText);
 			})
+		}
+	}
+})
+
+app.filter("myfilter",function(){
+	return function(input,param){
+		console.log("filter",param)
+		if(!!input){
+			return input*input;
+		}else {
+			return 0;
 		}
 	}
 })

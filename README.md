@@ -10,4 +10,5 @@ demo2
 
 demo3
 ------
-自定义指令2 +　$watch
+自定义指令2、$watch、$fliter
+
