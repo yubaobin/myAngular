@@ -57,7 +57,6 @@ app.controller("myCtrl",function($scope){
     $state.go('state3.detail',{id:id},{inherit:false}) //传递参数
   }
 }).controller("detail",function($scope,$stateParams){
-  console.log($scope.$parent.list)
   var id = $stateParams.id;
   if(id == 1){
     $scope.content = "你点击了第一个的详情";
@@ -68,6 +67,13 @@ app.controller("myCtrl",function($scope){
   }else if(id == 4){
     $scope.content = "你点击了第四个的详情";
   }
-}).controller('animate',function($scope){
-  
+}).controller('header',['$scope','common','$state',function($scope,common,$state){
+  console.log($state.toString());
+  $scope.goBack = function(){
+    common.goBack($state);
+  }
+}]).service('common', function(){
+  this.goBack = function($state){
+    
+  }
 })
