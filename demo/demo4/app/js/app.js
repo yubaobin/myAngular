@@ -1,4 +1,4 @@
-var app = angular.module('myApp',['ui.router','ngAnimate']);
+var app = angular.module('myApp',['ui.router']);
 app.controller("myCtrl",function($scope){
 	$scope.countries = ['Luxembourg','Saudi','Afghanistan','Bangladesh','Brunei','Cambodia','Indonesia','Jordan']
 }).config(function($stateProvider, $urlRouterProvider) {
