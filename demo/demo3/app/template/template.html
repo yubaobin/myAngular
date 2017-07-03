@@ -1,6 +1,0 @@
-<div style="display: inline-block;position: relative;">
-<input type="text" ng-model="search" ng-focus="focus()" ng-blur = "blur()" />
-<ul ng-show="isFocus" class="data-list" style="position: absolute;">
-    <li ng-repeat="item in datalist | filter:search | orderBy: item" myli>{{item}}</li>
-</ul>
-</div>
