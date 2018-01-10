@@ -1,0 +1,18 @@
+<div>
+  book works! <span [style.font-size.px]="size">{{ num }}</span>
+  <div #btnGroup [class.active]="1+1 === 3">
+    <button (click)="add(btnGroup, $event)">点击</button>
+  </div>
+  <section>输入文字: <input #wenzi [(ngModel)]="text"/></section>
+  <section>输出文字: {{ text }} </section>
+  <section>(#var获取元素): {{ wenzi.value }}</section>
+  <div [ngSwitch]="num % 4" [style.float]="'right'">
+    <h1 *ngSwitchCase="0">哇</h1>
+    <h1 *ngSwitchCase="1">啊</h1>
+    <h1 *ngSwitchCase="2">噗</h1>
+    <h1 *ngSwitchDefault>没事</h1>
+  </div>
+  <ul *ngIf="show">
+    <li *ngFor="let item of list">{{item}}</li>
+  </ul>
+</div>

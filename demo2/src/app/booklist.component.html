@@ -1,0 +1,8 @@
+<div class="bookList">
+  <h1>书本列表</h1>
+  <div class="book-container">
+    <div *ngFor="let bookItem of bookList">
+      <book-view [book]="bookItem"></book-view>
+    </div>
+  </div>
+</div>

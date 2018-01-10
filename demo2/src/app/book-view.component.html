@@ -1,0 +1,5 @@
+<div class="book">
+  <span class="title">{{ book.title }}</span>
+  <button (click)="showDetail()">{{ btnText }}</button>
+  <p *ngIf="showD">{{ book.desc }}</p>
+</div>

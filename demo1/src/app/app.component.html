@@ -1,0 +1,8 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1 [style.font-size.px]="changedSize" [ngClass]="test">
+    Hello {{name}}!Welcome to {{title | uppercase}}!
+  </h1>
+</div>
+<app-book (aliasClick)="handleBtn($event)" [(size)]="changedSize"></app-book>
+
