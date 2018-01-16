@@ -1,8 +1,14 @@
 <div class="bookList">
-  <h1>书本列表</h1>
+  <h1>书本列表<button (click)="setMission()">添加任务</button></h1>
   <div class="book-container">
     <div *ngFor="let bookItem of bookList">
-      <book-view [book]="bookItem"></book-view>
+      <book-view [book]="bookItem" (clickBook)="clickBook($event)"></book-view>
+    </div>
+  </div>
+  <div class="timer-container">
+    <timer></timer>
+    <div>
+      <button (click)="start()">开始</button><button (click)="stop()">停止</button><button (click)="reset()">重置</button>
     </div>
   </div>
 </div>

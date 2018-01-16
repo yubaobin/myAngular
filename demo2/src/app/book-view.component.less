@@ -1,0 +1,37 @@
+.book {
+  width: 500px;
+  margin: 3px 0px;
+  zoom:1;
+  span {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    display: inline-block;
+  }
+  p {
+    float: left;
+  }
+  button {
+    float: right;
+  }
+  &:before{
+    content:'';
+    display:block;
+  }
+  &:after{
+    content:'';
+    display:table;
+    clear:both;
+  }
+}
+/* 父节点 */
+:host {
+  background-color: #0f0;
+}
+
+:host-context(.theme-light) span {
+  display: block;
+  background-color: #eef;
+}

@@ -1,8 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
   <h1 [attr.title]="title">
-    Welcome to {{ title }}!
+    这是标题: {{ title }}!
   </h1>
   <button (click)="change()">change</button>
-  <book-list></book-list>
+  <button (click)="getLength(bookList)">getLength</button>
+  <book-list #bookList [(title)]="title"></book-list>
 </div>
