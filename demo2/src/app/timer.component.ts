@@ -9,7 +9,6 @@ export class TimerComponent implements OnInit {
 
   num:number = 0;
   timerId = 0;
-  width:string = '100px';
   constructor() { }
 
   ngOnInit() {
