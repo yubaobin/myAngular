@@ -1,0 +1,34 @@
+<div>
+  <p>属性型指令</p>
+  <h1 [appHighlight]="color" defaultColor="red">Welcome to {{ title }}!</h1>
+  <div>
+    <input type="radio" name="holor" value="#fff" [(ngModel)]="color"/>
+    <input type="radio" name="holor" value="#f00" [(ngModel)]="color"/>
+    <input type="radio" name="holor" value="#f0f" [(ngModel)]="color"/>
+  </div>
+  <p>结构型指令</p>
+  <p *appUnless="condition">appUnless</p>
+  <ng-template [appUnless]="!condition"><p>appUnless</p></ng-template>
+  <p>管道</p>
+  <input [(ngModel)]="p1" type="number"/> 乘以 <input [(ngModel)]="p2" type="number"/> = {{p1|exponentialStrength:p2}} <br/>
+  <input #name (keyup.enter)="addP(name.value);name.value='';" />
+  <input type="checkbox" [value]="true" [(ngModel)]="canFly"/>能飞
+  <ul>
+    <li *ngFor="let item of ps">{{item.name}}</li>
+  </ul>
+  <ul>
+    <li>能飞</li>
+    <li *ngFor="let item of (ps | people)">{{item.name}}</li>
+  </ul>
+  
+  <h1>AsyncPipe</h1>
+  {{ message$ | async }}
+  <div>
+    <h1 [@animType]="animType" *ngIf="isShow" (@animType.done)="animDone($event)">动画</h1>
+    <button (click)="toggleAnimType()" >改变</button>
+    <button (click)="changeShow()" >显示／隐藏</button>
+  </div>
+  
+  <h1>表单</h1>
+  <app-mform></app-mform>
+</div>

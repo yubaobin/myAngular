@@ -1,0 +1,46 @@
+<div style="border: 1px solid #cdcdcd;">
+  模版变量<input #mb (key)="0"/>{{ mb.value }}
+  <form>
+    <div><label>用户名</label><input [(ngModel)]="username" name="username"/></div>
+    <div><button (click)="submit($event, mb)">提交</button></div>
+  </form>
+  <div>
+    表单信息：
+    <div>
+      <p>用户名: {{username}}</p>
+    </div>
+  </div>
+</div>
+
+<form #varForm="ngForm" (submit)="submitForm(varForm)" style="position: relative;padding-bottom: 100px;">
+  <div>
+    <label>用户名</label><input name="uName" required maxlength="4" [(ngModel)]="user.username" #seeClass/> {{seeClass.className}}
+  </div>
+  <div>
+    <label>密码</label><input name="uPwd" required [(ngModel)]="user.uPwd" #password="ngModel" />
+    <p [hidden]="password.valid || password.pristine">请输入密码</p>
+  </div>
+  <div>
+    <label><input name="sex" type="radio" [(ngModel)]="user.sex" value="boy"/>男</label>
+    <label><input name="sex" type="radio" [(ngModel)]="user.sex" value="girl"/>女</label>
+  </div>
+  <div>
+    <select name="hobby" [(ngModel)]="user.hobby">
+      <option value="1">11111</option>
+      <option value="2">22222</option>
+      <option value="3">33333</option>
+    </select>
+  </div>
+  <div><button (click)="varForm.form.reset();">重置</button><button type="submit" [disabled]="!varForm.form.valid">提交</button></div>
+  <span style="position: absolute;bottom: 0px;">{{ diagnostic }}</span>
+</form>
+
+<form [formGroup]="gForm">
+  <div>
+    <label>邮箱</label><input name="email" formControlName="email"/>
+  </div>
+</form>
+<p>Form value:{{ gForm.value | json }}</p>
+<p>Form status: {{ gForm.status | json }}</p>
+
+

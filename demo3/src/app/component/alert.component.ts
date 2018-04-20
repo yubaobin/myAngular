@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class AlertComponent {
 
-  @Input() type:string = 'success';
+  @Input() type = 'success';
   @Output() output = new EventEmitter();
   constructor() { }
 
