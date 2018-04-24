@@ -9,6 +9,7 @@ import { UnlessDirective } from './directive/unless.directive';
 import { ExponentialStrengthPipe } from './pipe/exponential-strength.pipe';
 import { PeoplePipe } from './pipe/people.pipe';
 import { MformComponent } from './mform/mform.component';
+import { MobservableComponent } from './mobservable/mobservable.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MformComponent } from './mform/mform.component';
     UnlessDirective,
     ExponentialStrengthPipe,
     PeoplePipe,
-    MformComponent
+    MformComponent,
+    MobservableComponent
   ],
   imports: [
     BrowserModule,
